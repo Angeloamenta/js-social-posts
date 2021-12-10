@@ -10,10 +10,24 @@ const user =
 
 {
     name: "Angelo",
-    avatar : "https://picsum.photos/200/300.jpg",
+    avatar : "https://i.picsum.photos/id/960/200/300.jpg?hmac=lMLI27rQoFOVbWUEFQBILnVA_jFYw2b8KHACIGkDLD4",
     data: "07,20,1991",
-    img : "https://picsum.photos/200/150.jpg",
+    img : "https://i.picsum.photos/id/375/200/300.jpg?hmac=LBiwrXNHAfYU5B9rOkXkrH8iw8bSwUaHoV7Adk3I5s4",
     like : 89
+},
+{
+    name: "Francesco",
+    avatar : "https://i.picsum.photos/id/524/300/300.jpg?hmac=MpxUkv6gcBsbfdS64thmQBCSgpyfNIXq2Y8_Gx3SupA",
+    data: "11,15,2002",
+    img : "https://i.picsum.photos/id/478/200/300.jpg?hmac=9XTsWr649TEW4EJf8V09OflQrYWLvD63zeYkUNJ8Aq4",
+    like : 52
+},
+{
+    name: "Pino",
+    avatar : "https://i.picsum.photos/id/423/200/300.jpg?hmac=Yb4FKqDYd2C1Lvx5F0BDwATeS4vxsllU9vPl228-BXQ",
+    data: "12,24,2021",
+    img : "https://i.picsum.photos/id/1040/200/300.jpg?hmac=Q4ntfv8HG_O9dfwjINSmS4oQUot0YUwT_6bezgKA3Jw",
+    like : 31
 }
 
 ];
@@ -56,7 +70,41 @@ for (let i = 0; i < user.length; i++) {
             </div>            
             
         </div>
-    `
-}
+        `
+         const button = document.querySelector(".js-like-button");
+    
+    button.addEventListener("click", function (event) {
+        event.preventDefault()
+       console.log("ciao");
+       element.like += +1;
+       
+        console.log(element.like);
+       
+    })
 
-const button = document.querySelector(".js-like-button");
+    }
+
+    // const button = document.querySelector(".js-like-button");
+    
+    // button.addEventListener("click", function (event) {
+    //     event.preventDefault()
+    //    console.log("ciao");
+    //    element.like += +1;
+       
+    //     console.log(element.like);
+       
+    // })
+
+    // for (let i = 0; i < user.length; i++) {
+    //     const element = user[i];
+    //     const button = document.querySelector(".js-like-button");
+    
+    // button.addEventListener("click", function (event) {
+    //     event.preventDefault()
+    //    console.log("ciao");
+    //    element.like += +1;
+       
+    //     console.log(element.like);
+       
+    // })
+    // }
