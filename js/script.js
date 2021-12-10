@@ -85,11 +85,8 @@ for (let i = 0; i < user.length; i++) {
 
         button[x].addEventListener("click", function (event) {
                 event.preventDefault()
-                    for (let q = 0; q < likes.length; q++) {
-                        const element = likes[q];
-                        console.log(likes[q]);
-                        element.innerHTML += 1
-                        console.log(element);
-                    }
+                const element = likes[x];
+                element.innerHTML += 1
+                console.log(element);
             }) 
     }
