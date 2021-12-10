@@ -71,12 +71,12 @@ for (let i = 0; i < user.length; i++) {
             
         </div>
         `
-        console.log(parseInt(element.like));
     }
     
     
     const button = document.querySelectorAll(".js-like-button");
     const likes = document.querySelectorAll(".js-likes-counter");
+    
     console.log(likes);
     console.log(button);
     for (let x = 0; x < button.length; x++) {
@@ -86,7 +86,11 @@ for (let i = 0; i < user.length; i++) {
         button[x].addEventListener("click", function (event) {
                 event.preventDefault()
                 const element = likes[x];
-                element.innerHTML += 1
+                const number1 = element.textContent;
+                console.log("numero",number1);
+                const number = parseInt(number1)
+                console.log("par",number);
+                element.innerHTML = number + 1;
                 console.log(element);
             }) 
     }
