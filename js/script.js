@@ -13,7 +13,7 @@ const user =
     avatar : "https://i.picsum.photos/id/960/200/300.jpg?hmac=lMLI27rQoFOVbWUEFQBILnVA_jFYw2b8KHACIGkDLD4",
     data: "07,20,1991",
     img : "https://i.picsum.photos/id/375/200/300.jpg?hmac=LBiwrXNHAfYU5B9rOkXkrH8iw8bSwUaHoV7Adk3I5s4",
-    like : 89
+    like : parseInt(89)
 },
 {
     name: "Francesco",
@@ -64,68 +64,39 @@ for (let i = 0; i < user.length; i++) {
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${element.like}</b> persone
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${parseInt(element.like)}</b> persone
                     </div>
                 </div> 
             </div>            
             
         </div>
         `
-        // for (let f = 0; f < element.like.length; f++) {
-        //     const elements = element.like[f];
-        //     console.log("prova",elements);
-        // }
-        
-        const button = document.querySelectorAll(".js-like-button");
-        console.log(button);
-        for (let x = 0; x < button.length; x++) {
-            const btn = button[x];
-            console.log(btn);
+        console.log(parseInt(element.like));
+    }
     
-            button[x].addEventListener("click", function (event) {
-                    event.preventDefault()
-                   console.log("ciao");
-                   element.like += 1;
-               
-                    console.log(element.like);
-               
-                }) 
-        }
-   
+    
+    const button = document.querySelectorAll(".js-like-button");
+    const likes = document.querySelectorAll(".js-likes-counter");
+    console.log(likes);
+    console.log(button);
+    for (let x = 0; x < button.length; x++) {
+        const btn = button[x];
+        console.log(btn);
+
+        button[x].addEventListener("click", function (event) {
+                event.preventDefault()
+                    for (let q = 0; q < likes.length; q++) {
+                        const element = likes[q];
+                        element.innerHTML += 1
+                        console.log(element);
+                    }
+            }) 
     }
 
-   
-    // const button = document.querySelector(".js-like-button");
-        
-        // button.addEventListener("click", function (event) {
-            //     event.preventDefault()
-            //    console.log("ciao");
-            //    element.like += +1;
-            
-            //     console.log(element.like);
-            
-            // })
-            
-            // for (let i = 0; i < user.length; i++) {
-                //     const element = user[i];
-                //     const button = document.querySelector(".js-like-button");
-                
-                // button.addEventListener("click", function (event) {
-                    //     event.preventDefault()
-                    //    console.log("ciao");
-                    //    element.like += +1;
-                    
-                    //     console.log(element.like);
-                    
-                    // })
-                    // }
 
+    // for (let k = 0; k < user.length; k++) {
+    //     const elementi = user[k];
+    //     elementi.like += 1;
 
-                    // button.addEventListener("click", function (event) {
-                    //     event.preventDefault()
-                    //    console.log("ciao");
-                    //    element.like += +1;
-                       
-                    //     console.log(element.like);
-                       
-                    // })
+    //     console.log(elementi.like);
+    // }
