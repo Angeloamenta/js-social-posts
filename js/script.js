@@ -13,7 +13,7 @@ const user =
     avatar : "https://i.picsum.photos/id/960/200/300.jpg?hmac=lMLI27rQoFOVbWUEFQBILnVA_jFYw2b8KHACIGkDLD4",
     data: "07,20,1991",
     img : "https://i.picsum.photos/id/375/200/300.jpg?hmac=LBiwrXNHAfYU5B9rOkXkrH8iw8bSwUaHoV7Adk3I5s4",
-    like : parseInt(89)
+    like : 89
 },
 {
     name: "Francesco",
@@ -64,7 +64,7 @@ for (let i = 0; i < user.length; i++) {
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${parseInt(element.like)}</b> persone
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${element.like}</b> persone
                     </div>
                 </div> 
             </div>            
@@ -87,16 +87,9 @@ for (let i = 0; i < user.length; i++) {
                 event.preventDefault()
                     for (let q = 0; q < likes.length; q++) {
                         const element = likes[q];
+                        console.log(likes[q]);
                         element.innerHTML += 1
                         console.log(element);
                     }
             }) 
     }
-
-
-    // for (let k = 0; k < user.length; k++) {
-    //     const elementi = user[k];
-    //     elementi.like += 1;
-
-    //     console.log(elementi.like);
-    // }
