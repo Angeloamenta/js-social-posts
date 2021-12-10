@@ -71,26 +71,31 @@ for (let i = 0; i < user.length; i++) {
             
         </div>
         `
-         const button = document.querySelectorAll(".js-like-button");
-         console.log(button);
-         for (let x = 0; x < button.length; x++) {
-             const btn = button[x];
-             console.log(btn);
-
-             button[x].addEventListener("click", function (event) {
-                     event.preventDefault()
-                    console.log("ciao");
-                    element.like += +1;
-                
-                     console.log(element.like);
-                
-                 }) 
-         }
-    
-         
-        }
+        // for (let f = 0; f < element.like.length; f++) {
+        //     const elements = element.like[f];
+        //     console.log("prova",elements);
+        // }
         
-        // const button = document.querySelector(".js-like-button");
+        const button = document.querySelectorAll(".js-like-button");
+        console.log(button);
+        for (let x = 0; x < button.length; x++) {
+            const btn = button[x];
+            console.log(btn);
+    
+            button[x].addEventListener("click", function (event) {
+                    event.preventDefault()
+                   console.log("ciao");
+                   element.like += 1;
+               
+                    console.log(element.like);
+               
+                }) 
+        }
+   
+    }
+
+   
+    // const button = document.querySelector(".js-like-button");
         
         // button.addEventListener("click", function (event) {
             //     event.preventDefault()
