@@ -11,21 +11,21 @@ const user =
 {
     name: "Angelo",
     avatar : "https://i.picsum.photos/id/960/200/300.jpg?hmac=lMLI27rQoFOVbWUEFQBILnVA_jFYw2b8KHACIGkDLD4",
-    data: "07,20,1991",
+    data: "07/20/1991",
     img : "https://i.picsum.photos/id/375/200/300.jpg?hmac=LBiwrXNHAfYU5B9rOkXkrH8iw8bSwUaHoV7Adk3I5s4",
     like : 89
 },
 {
     name: "Francesco",
     avatar : "https://i.picsum.photos/id/524/300/300.jpg?hmac=MpxUkv6gcBsbfdS64thmQBCSgpyfNIXq2Y8_Gx3SupA",
-    data: "11,15,2002",
+    data: "11/15/2002",
     img : "https://i.picsum.photos/id/478/200/300.jpg?hmac=9XTsWr649TEW4EJf8V09OflQrYWLvD63zeYkUNJ8Aq4",
     like : 52
 },
 {
     name: "Pino",
     avatar : "https://i.picsum.photos/id/423/200/300.jpg?hmac=Yb4FKqDYd2C1Lvx5F0BDwATeS4vxsllU9vPl228-BXQ",
-    data: "12,24,2021",
+    data: "12/24/2021",
     img : "https://i.picsum.photos/id/1040/200/300.jpg?hmac=Q4ntfv8HG_O9dfwjINSmS4oQUot0YUwT_6bezgKA3Jw",
     like : 31
 }
@@ -58,9 +58,9 @@ for (let i = 0; i < user.length; i++) {
             <div class="post__footer">
                 <div class="likes js-likes">
                     <div class="likes__cta">
-                        <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <a class="like-button js-like-button" href="#" data-postid="1">
                             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                            <span class="like-button__label">Mi Piace</span>
+                            <span class="like-button__label ">Mi Piace</span>
                         </a>
                     </div>
                     <div class="likes__counter">
@@ -77,8 +77,10 @@ for (let i = 0; i < user.length; i++) {
     const button = document.querySelectorAll(".js-like-button");
     const likes = document.querySelectorAll(".js-likes-counter");
     
+    
     console.log(likes);
     console.log(button);
+   
     for (let x = 0; x < button.length; x++) {
         const btn = button[x];
         console.log(btn);
@@ -90,7 +92,18 @@ for (let i = 0; i < user.length; i++) {
                 console.log("numero",number1);
                 const number = parseInt(number1)
                 console.log("par",number);
-                element.innerHTML = number + 1;
                 console.log(element);
+                console.log(button[x].classList.value);
+                console.log(button[x].classList.contains("like-button--liked"));
+               if (button[x].classList.contains("like-button--liked") === false) {
+    
+                   button[x].classList.add("like-button--liked");
+                   element.innerHTML = number + 1;
+               } else if (button[x].classList.contains("like-button--liked") === true) {
+                   
+                   button[x].classList.remove("like-button--liked");
+                   element.innerHTML = number - 1;
+               }
+                
             }) 
     }
